@@ -1,0 +1,67 @@
+<!--pages/home/home.wxml-->
+<swiper style="height:200px;width:100%;background:#eee" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <!--广告banner-->
+  <block wx:for="{{ banner }}" wx:key="item">
+    <swiper-item>
+      <navigator url="/pages/good/index?id={{item.id}}">
+        <image src="{{ item.path }}" class="slide-image" mode='scaleToFill' />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view id='types'>
+  <button class='list-item' bindtap="navigateToFunction" data-id="1" hover-class="none">
+    <view class='item-head'>
+      <image src="../../images/phone.png" mode="scaleToFill"></image>
+    </view>
+    <view class='item-foot'>
+      客服电话
+    </view>
+  </button>
+  <button class='list-item' bindtap="navigateToFunction" data-id="2" hover-class="none" open-type='share'>
+    <view class='item-head'>
+      <image src="../../images/share.png" mode="scaleToFill"></image>
+    </view>
+    <view class='item-foot'>
+      分享程序
+    </view>
+  </button>
+  <button class='list-item' bindtap="navigateToFunction" data-id="3" hover-class="none">
+    <view class='item-head'>
+      <image src="../../images/map1.png" mode="scaleToFill"></image>
+    </view>
+    <view class='item-foot'>
+      地图导航
+    </view>
+  </button>
+  <button class='list-item' bindtap="navigateToFunction" data-id="4" hover-class="none">
+    <view class='item-head'>
+      <image src="../../images/imagetype.png" mode="scaleToFill"></image>
+    </view>
+    <view class='item-foot'>
+      场景展示
+    </view>
+  </button>
+</view>
+<view class='interval'></view>
+<block wx:for="{{ goods }}" wx:key="item">
+  <view class="cell" bindtap='todetails' data-id="{{item.id}}">
+    <view class='left'>
+      <view class="cell_left">
+        <image src="{{item.orderPath}}" style="vertical-align: middle;width:188rpx; height: 138rpx;"></image>
+      </view>
+      <view class='cell_info'>
+        <view class='info_name'>{{item.goodName}}</view>
+        <view class='info_price'>￥{{item.goodPrice}}</view>
+      </view>
+    </view>
+    <view class='cell_right'>
+      <view class='buy_btn' style='float: right;'>预订</view>
+    </view>
+  </view>
+
+  <view class='interval'></view>
+</block>
+
+<view class='content_title'>-- 公司简介 --</view>
+<image class='content' src='../../images/home_content.png' mode='widthFix'></image>

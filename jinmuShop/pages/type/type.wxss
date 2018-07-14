@@ -1,0 +1,70 @@
+page{
+background: #f5f5f5;
+/* 避免左侧Item不够时 被白色覆盖*/
+}
+
+
+/* 2.主盒子 */
+.container {
+width: 100%; /* 宽度占屏幕的100% */
+height: 100%; /* 高度占屏幕的100% */
+background-color: #fff; /* 背景颜色 */
+}
+
+
+/* 3.左盒子*/
+
+/* 3.1. 左侧栏主盒子总体设置 */
+.nav_left{
+position:absolute; /* 使用绝对定位 */
+top:0px; /* 距离上边距：0px */
+left:0px; /* 距离左边距：0px */
+width: 25%; /* 每个item所占的宽度 */
+background: #f5f5f5; /* 主盒子设置背景色为灰色 */
+text-align: center; /* 文字居中显示 */
+
+}
+
+/* 3.2. 左侧栏的每个item */
+.nav_left .nav_left_items{
+height: 60rpx; /* 每个item高40px*/
+padding: 12rpx 0; /* 上内边距和下内边距是 6px[增加高度] 右内边距和左内边距是 0px*/
+border-bottom: 2rpx solid #dedede; /* 设置下边线 */
+font-size: 30rpx; /* 设置文字大小：14px */
+text-align: center;
+line-height: 60rpx;
+}
+
+/* 3.3. 左侧栏list的item被选中时*/
+.nav_left .nav_left_items.active{
+background: #fff; /* 背景色变成白色 */
+color: red; /* 字体编程蓝色 */
+
+}
+
+
+/* 4.右盒子 */
+
+/* 4.1. 右侧栏主盒子总体设置 */
+.nav_right{
+position: absolute; /* 使用绝对定位 */
+top: 0; /* 距离上边距：0px */
+left: 160rpx; /* 距离左边距：80px */
+width: 75%; /* 右侧主盒子所占宽度 */
+height: 1000rpx; /* 右侧主盒子所占高度 */
+padding: 20rpx 14rpx; /* 所有 4 个内边距都是 10px*/
+background: #f5f5f5; /* 右侧主盒子背景颜色 */
+}
+
+/* 4.2. 右侧栏中的每个item */
+.nav_right .nav_right_items{
+float: left; /* 浮动向左 */
+width: 100%; /* 每个item设置宽度是33.33% */
+height: 320rpx; /* 每个item设置高度是120px */
+}
+
+/* 4.3. 右侧栏中的每个item的图样式设置 */
+.nav_right .nav_right_items image{
+width: 100%; /* 给图片设置宽度 */
+height: 300rpx; /* 给图片设置高度 */
+}

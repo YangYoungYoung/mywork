@@ -1,0 +1,66 @@
+<!--主盒子-->
+<view class="container">
+
+  <!-- 左侧栏开始 -->
+  <view class='nav_left'>
+    <block wx:for="{{menu}}" wx:key="item">
+      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  <!-- 左侧栏结束 -->
+
+
+  <!-- 右侧栏开始 -->
+  <view class="nav_right">
+    <view wx:if="{{curNav==curIndex}}">
+      <block wx:for="{{menu[curIndex-1].listPath}}" wx:key="item">
+        <view class="nav_right_items">
+          <image wx:if="{{item}}" src="{{item}}" mode="aspectFill"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 右侧栏结束 -->
+
+
+</view>
+
+
+
+
+
+
+<!--主盒子-->
+<!-- <view class="book-box">
+
+  <scroll-view class='swipter-nav' scroll-y="true" style="height:100%; width:100px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="swiper-vertical-tab">
+      <view wx:for="{{menu}}" wx:key="item" class="{{currentType==item.id ? 'on' : ''}}" bindtap="chooseType" data-foodtype="{{item.id}}">{{item.name}}</view>
+    </view>
+  </scroll-view>
+
+
+
+  <scroll-view class="swiper-vertical-box" scroll-y="true" style="height:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view wx-if="{{currentType==item.id}}" class="vertical-list" wx:for="{{menu}}" wx:key="item">
+      <text class="title">{{item.name}}</text>
+      <block wx:if="{{item.pic.length}}">
+        <view class="type-detail">
+          <view wx:for="{{item.pic}}" wx:key="item" >
+
+            <image src="{{item}}" mode="aspectFill"></image>
+
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='noshop'>暂无图片</view>
+      </block>
+    </view>
+
+  </scroll-view>
+
+
+</view> -->

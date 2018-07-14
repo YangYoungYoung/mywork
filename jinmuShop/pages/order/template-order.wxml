@@ -1,0 +1,52 @@
+     <view class="zan-cell">
+            <!-- <view class="zan-cell__bd">
+                 <view class="zan-pull-left smallsize">下单时间：{{item.createdAt}}</view> 
+                <view class="zan-pull-right" style="color:red">{{item.status}}</view>
+            </view> -->
+            </view>
+            <view class="zan-cell">
+            <view class="zan-cell__bd">
+                <view class="zan-pull-left smallsize">订单编号：{{item.orderId}}</view>
+            </view>
+            </view>
+             <!-- <view class="zan-cell">
+            <view class="zan-cell__bd">
+                <view class="zan-pull-left smallsize">备注：</view>
+                <view class="zan-pull-right smallsize" wx:if="{{item.remarks}}">{{item.remarks}}</view>
+                <view class="zan-pull-right smallsize" wx:else>无</view>
+            </view>
+            </view>  -->
+            <view class="zan-card" wx:for="{{item.goods}}" wx:key="goods">
+              <view class="zan-card__thumb">
+                  <image class="zan-card__img"
+                  src="{{item.orderPath}}"
+                  mode="aspectFit"
+                  ></image>
+              </view>
+              <view class="zan-card__detail">
+                  <view class="zan-card__detail-row" style='"margin-top:20rpx"'>
+                    <view class="zan-card__right-col">¥ {{item.goodPrice}}</view>
+                    <view class="zan-card__left-col zan-ellipsis--l2">
+                        {{item.goodName }}
+                    </view>
+                  </view>
+                  <view class="zan-card__detail-row zan-c-gray-darker">
+                    <view class="zan-card__right-col">x{{item.number}}</view>
+                    <view class="zan-card__left-col">
+                        商品数量
+                    </view>
+                  </view>
+              </view>
+            </view>
+
+            <view class="zan-panel" style="padding: 5px;">
+             <view class="zan-pull-left count">合计：￥{{item.price}}</view>
+            <button class="zan-btn zan-btn--small zan-btn--danger zan-btn--plain zan-pull-right" style="margin-left:10px" wx:if="{{item.orderState == '0'}}" bindtap="payOrder" data-id="{{item.id}}" data-price="{{item.price}}">确认付款</button>
+            <button class="zan-btn zan-btn--small zan-pull-right" wx:if="{{item.orderState == '0'}}" bindtap="cancelOrder" data-id="{{item.id}}">取消订单</button>
+<button class="zan-btn zan-btn--small zan-btn--danger zan-btn--plain zan-pull-right" style="margin-left:10px" wx:if="{{item.orderState == '1'}}" bindtap="overOrder" data-id="{{item.id}}">确认使用</button>
+
+<button class="zan-btn zan-btn--small zan-btn--danger zan-btn--plain zan-pull-right" style="margin-left:10px" wx:if="{{item.orderState == '2'}}" bindtap="deleteOrder" data-id="{{item.id}}" data-price="{{item.price}}">删除订单</button>
+        <button class="zan-btn zan-btn--small zan-pull-right" wx:if="{{item.orderState == '2'}}" bindtap="" data-id="{{item.id}}" disabled='true'>已使用</button>
+            
+
+            </view>

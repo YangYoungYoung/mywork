@@ -1,0 +1,78 @@
+<!--pages/center/center.wxml-->
+<view class='server'>
+
+</view>
+<view class="zan-pannel" >
+  <view class="g-bda-userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+
+<view class="zan-panel">
+
+</view>
+
+<view class="centerContainer">
+  <view class="zan-panel">
+
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <view class="zan-pull-left">我的订单</view>
+        <navigator url="/pages/order/order">
+          <view class="zan-pull-right smallsize">查看全部订单 ></view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="zan-cell" style="margin:0px;padding:12px 0px;">
+      <view class="zan-cell__bd">
+        <view class="icon-wrap">
+          <navigator url='../order/order?id=0'>
+             <view class="zan-icon zan-icon-topay" style="font-size: 25px;"></view> 
+            <!-- <image class="image" src="../../images/center3.png"></image> -->
+            <view class="icon-classname smallsize">待付款</view>
+          </navigator>
+        </view>
+        <view class="icon-wrap">
+          <navigator url='../order/order?id=1'>
+             <view class="zan-icon zan-icon-sign" style="font-size: 25px;"></view> 
+            <!-- <image class="image" src="../../images/center4.png"></image> -->
+            <view class="icon-classname smallsize">已完成</view>
+          </navigator>
+        </view>
+        <view class="icon-wrap">
+                <navigator url='../order/order?id=2'>
+                <view class="zan-icon zan-icon-tosend" style="font-size: 25px;"></view>
+                <view class="icon-classname smallsize">已使用</view>
+                </navigator>
+            </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd" bindtap="cart">
+        <view class="zan-pull-left">购物车</view>
+        <view class="zan-pull-right smallsize">></view>
+      </view>
+    </view>
+
+
+    <view class="deg">
+      <view class="zan-pull-right-mine smallsize">></view>
+      <button open-type="contact" session-from="weapp">
+        联系客服
+      </button>
+    </view>
+  </view>
+
+  <view class="weui-footer" style='background-color:#EEE;padding-top:30rpx'>
+    <!-- <view class="weui-footer__links">
+       <navigator url="" class="weui-footer__link">底部链接</navigator> 
+    </view> -->
+    <view class="weui-footer__text">技术支持 © 玄宇通网络科技</view>
+  </view>
+</view>

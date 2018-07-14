@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='image-view'>
+    <image class='login-bg' src='../../images/login_bg.png' mode="widthFix"></image>
+  </view>
+  <view class='login-view'>
+    <button class='login-btn' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+  
+</view>
