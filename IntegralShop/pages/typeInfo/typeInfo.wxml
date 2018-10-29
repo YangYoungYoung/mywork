@@ -1,0 +1,38 @@
+<!--pages/typeInfo/typeInfo.wxml-->
+<view class="container">
+  <view class='title'>{{shopInfo[0].typeName}}</view>
+
+
+  <view class='line'></view>
+
+  <view class='shop_grid' wx:if="{{shopInfo.length>0}}">
+    <block wx:for="{{ shopInfo }}" wx:key="item">
+      <view class='item_view' bindtap='toDetail' data-id='{{item.id}}'>
+        <view class='item_head'>
+          <image class='head_image' src='{{item.shopImage}}' mode="scaleToFill"></image>
+        </view>
+        <view class='item_foot'>
+
+          <view class='item_title'>{{item.shopName}}</view>
+          <view class='item_integral'>
+            <i-tag class="i-tags" type="border" color="red">
+              现金券
+            </i-tag>
+            <view class='price_info'>{{item.integral}}</view>
+          </view>
+
+          <view class='item_integral'>
+            <i-tag class="i-tags" type="border" color="red">
+              原价购买
+            </i-tag>
+            <view class='price_info'>{{item.money}}元</view>
+          </view>
+          <view class='item_sold'>库存：{{item.stock}} 已售：{{item.sold}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='info_null' wx:else>
+      抱歉，当前没有数据
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/testWeb/ortestWebder.wxml-->
+<web-view src="{{url}}"></web-view>

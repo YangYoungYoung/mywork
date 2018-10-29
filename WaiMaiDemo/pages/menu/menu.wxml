@@ -1,0 +1,44 @@
+<!--主盒子-->
+<view class="container">
+
+  <!-- 左侧栏开始 -->
+  <view class='nav_left'>
+    <block wx:for="{{menu}}" wx:key="item">
+      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  <!-- 左侧栏结束 -->
+
+
+  <!-- 右侧栏开始 -->
+  <view class="nav_right">
+    <view wx:if="{{curNav==curIndex}}">
+      <block wx:for="{{menu[curIndex-1].listPath}}" wx:key="{{item.id}}" ">
+        <view class="nav_right_items ">
+          
+          <image src="../../images/item-m.jpg "></image>
+          <view class='item_view_text'>
+            <text class="title ">{{item.title}}</text>
+            <text class="price ">￥ {{item.price}} 元</text>
+            <i-input-number value="{{item.num}} " min="0 " max="100 " bindchange="handleChange " />
+          </view>
+          
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 右侧栏结束 -->
+
+  <view class="{{bottomFlag ? 'bottom-bar' : 'bottom-bar hidden'}} ">
+    <view class="count ">
+      共
+      <text class="num ">{{orderCount.num}} 件</text> 合计
+      <text class="num ">{{orderCount.money}} 元</text>
+    </view>
+    <view class="btn ">
+      <text bindtap='card'>购物车</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,145 @@
+/**index.wxss**/
+
+.slide-image {
+  width: 100%;
+}
+
+.type_line {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.type_line image {
+  width: 577rpx;
+  height: 27rpx;
+}
+
+#types {
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+
+.list-item {
+  padding-top: 20rpx;
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-foot {
+  font-size: 24rpx;
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.item-head {
+  width: 100%;
+  height: 83rpx;
+}
+
+.item-head image {
+  width: 83rpx;
+  height: 100%;
+}
+
+.recommend_title {
+  width: 100%;
+  text-align: center;
+  color: #E8A844;
+  font-size: 34rpx;
+  padding-top: 20rpx;
+  padding-bottom: 15rpx;
+}
+
+.line {
+  width: 100%;
+  height: 20rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+}
+
+.shop_grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background-color: #eee;
+}
+
+.item_view {
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 15rpx;
+}
+
+.item_head {
+  width: 100%;
+  height: 367rpx;
+  display: block;
+}
+
+.item_head image {
+  width: 100%;
+  height: 100%;
+}
+
+.item_foot {
+  width: 100%;
+  padding: 15rpx 10rpx 10rpx 15rpx;
+  text-align: center;
+}
+
+.item_title {
+  padding-right: 30rpx;
+  display: block;
+  height: 30rpx;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #4F4F4F;
+}
+
+.item_integral {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  line-height: 100%;
+  margin-top: 15rpx;
+}
+
+.price_info {
+  height: 36rpx;
+  margin-left: 12rpx;
+  color: #6f6f6f;
+  font-size: 28rpx;
+}
+
+.item_sold{
+  margin-top: 10rpx;
+  display: flex;
+  float: right;
+  font-size: 26rpx;
+  padding-right: 40rpx;
+  color: #969696;
+}

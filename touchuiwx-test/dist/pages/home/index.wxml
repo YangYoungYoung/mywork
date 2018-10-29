@@ -1,0 +1,37 @@
+<view>
+  <view class="starContent" wx:if="{{ isShow }}">
+    <ui-star _pid="{{_pid}}"></ui-star>
+  </view>
+
+  <view class="buttonContent">
+    <button type="primary" bindtap="starShow">创建评分控件</button>
+  </view>
+  <view class="viewContent">这只是一个测试</view>
+  <button type="primary" data-show="{{ true }}" bindtap="handleShowMask1">打开全屏遮罩</button>
+  <ui-mask show="{{showMask1}}" hide-delay="500" top="0" _pid="{{_pid}}">
+    <view class="content">
+      <button type="success" data-show="{{ false }}" bindtap="handleShowMask1">关闭遮罩</button>
+    </view>
+  </ui-mask>
+
+  <button type="primary" data-show="{{ true }}" bindtap="handleShowMask2">遮罩导航栏以下的区域</button>
+  <ui-mask show="{{showMask2}}" top="{{top2}}" _pid="{{_pid}}">
+    <view class="content">
+      <button type="success" data-show="{{ false }}" bindtap="handleShowMask2">关闭遮罩</button>
+    </view>
+  </ui-mask>
+
+  <button type="primary" data-show="{{ true }}" bindtap="handleShowMask3">点击遮罩不关闭</button>
+  <ui-mask show="{{showMask3}}" hide-on-tap="{{false}}" _pid="{{_pid}}">
+    <view class="content">
+      <button type="success" data-show="{{ false }}" bindtap="handleShowMask3">关闭遮罩</button>
+    </view>
+  </ui-mask>
+
+  <button type="primary" data-show="{{ true }}" bindtap="handleShowMask6">遮罩动画（由小变大）</button>
+  <ui-mask show="{{showMask6}}" effect="scale-out" animation="" _pid="{{_pid}}">
+    <view class="content">
+      <button type="success" data-show="{{ false }}" bindtap="handleShowMask6">关闭遮罩</button>
+    </view>
+  </ui-mask>
+</view>

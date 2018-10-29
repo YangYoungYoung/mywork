@@ -1,0 +1,32 @@
+/* pages/login/login.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  position: fixed;
+  background-color: #008FFF;
+  margin: 0px;
+  /*下面的是关键的设置100%显示*/
+  background-size: 100% 100%;
+  align-items: center;
+  display: flex;
+}
+
+.title{
+  width: 100%;
+  font-size: 80rpx;
+  color: white;
+  text-align: center;
+  margin-top: 100rpx;
+}
+.btn{
+  
+  width: 345rpx;
+  height: 80rpx;
+  background-color: #fc8901;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  font-size: 34rpx;
+}

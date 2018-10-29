@@ -1,0 +1,112 @@
+<!--pages/mine/mine.wxml-->
+
+<view class="zan-pannel">
+  <view class="g-bda-userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="userinfo-nickname">当前身份:{{roleName}}</text>
+  </view>
+</view>
+<view class="centerContainer">
+  <view class="zan-panel">
+    <view wx:if="{{role!=0}}">
+      <view class="zan-cell">
+        <view class="zan-cell__bd">
+          <view class="zan-pull-left">余额：{{balance}}元</view>
+          <view wx:if="{{integral>0}}">
+            <view class="zan-pull-right smallsize">积分：{{integral}}</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 一级用户 -->
+      <view wx:if="{{role==1}}">
+        <view class="zan-cell">
+          <view class="zan-cell__bd" bindtap="checkBalance">
+            <view class="zan-pull-left">查看返利及明细</view>
+            <view class="zan-pull-right smallsize">></view>
+          </view>
+        </view>
+        <view class="zan-cell">
+          <view class="zan-cell__bd" bindtap="deposit">
+            <view class="zan-pull-left">用户提现</view>
+            <view class="zan-pull-right smallsize">></view>
+          </view>
+        </view>
+        <!--弹窗-->
+        <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+        <view class="modal-dialog" wx:if="{{showModal}}">
+          <view class="modal-title">提现</view>
+          <view class="modal-content">
+            <view class="modal-input">
+              <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入金额"></input>
+            </view>
+          </view>
+          <view class="modal-footer">
+            <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+            <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+          </view>
+        </view>
+
+        <view class="deg">
+          <button open-type="share" session-from="weapp">
+            推广新用户
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- 运营者界面 -->
+    <view wx:if="{{role==0}}">
+
+      <view class="zan-cell">
+        <view class="zan-cell__bd" bindtap="deposit">
+          <view class="zan-pull-left">运营</view>
+          <view class="zan-pull-right smallsize">></view>
+        </view>
+      </view>
+      <!--弹窗-->
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+      <view class="modal-dialog" wx:if="{{showModal}}">
+        <view class="modal-title">消费</view>
+        <view class="modal-content">
+          <view class="modal-input">
+            <input placeholder-class="input-holder" type="number" maxlength="6" bindinput="inputMoney" class="input" placeholder="请输入消费金额"></input>
+          </view>
+          <view class="modal-input" style='margin-top: 20rpx;'>
+            <input placeholder-class="input-holder" type="number" maxlength="11" bindinput="inputPhone" class="input" placeholder="请输入手机号"></input>
+          </view>
+          <view class="modal-input" style='margin-top: 20rpx;'>
+            <input placeholder-class="input-holder" password="true" type="number" maxlength="6" bindinput="inputPwd" class="input" placeholder="请输入6位数密码"></input>
+          </view>
+        </view>
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+          <view class="btn-confirm" bindtap="parentShop" data-status="confirm">确定</view>
+        </view>
+      </view>
+
+      <view class="deg">
+        <button open-type="share" session-from="weapp">
+          推广新用户
+        </button>
+      </view>
+
+    </view>
+  </view>
+  <view class="deg">
+    <button open-type="contact" session-from="weapp">
+      联系客服
+    </button>
+    <!-- <view class="zan-pull-right-mine smallsize">></view> -->
+  </view>
+
+
+
+
+  <view class="weui-footer" style='background-color:#EEE;padding-top:30rpx'>
+    <!-- <view class="weui-footer__links">
+       <navigator url="" class="weui-footer__link">底部链接</navigator> 
+    </view> -->
+    <view class="weui-footer__text">Copyright © 2018 河北玄宇通网络科技有限公司</view>
+  </view>
+</view>

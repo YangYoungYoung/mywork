@@ -1,0 +1,17 @@
+<!--pages/mine/coupon/coupon.wxml-->
+<scroll-view scroll-y="true" style="height: 100%">
+  <view class='container'>
+    <view class='coupon-list' wx:for="{{coupons}}" wx:key="item">
+      <view class='coupon-view'>
+        <view class='coupon-left'>
+          <view class='coupon-title'>￥{{item.coupon}}</view>
+          <view class='coupon-type'>类型：{{item.typeName}}</view>
+        </view>
+        <view class='coupon-right'>
+          <button class='use-btn' bindtap='toShop'>购物使用</button>
+        </view>
+      </view>
+      <view class='line'></view>
+    </view>
+  </view>
+</scroll-view>

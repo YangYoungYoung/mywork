@@ -1,0 +1,97 @@
+<template>
+  <view>
+    <view class="starContent" wx:if="{{ isShow }}">
+      <ui-star></ui-star>
+    </view>
+
+    <view class="buttonContent">
+      <button type="primary" bindtap="starShow">创建评分控件</button>
+    </view> 
+  <view class="viewContent">这只是一个测试</view>
+  <button type="primary" data-show="{{ true }}"  bindtap="handleShowMask1">打开全屏遮罩</button>
+<ui-mask show="{{showMask1}}" hide-delay="500" top="0">
+    <view class="content">
+        <button type="success" data-show="{{ false }}" bindtap="handleShowMask1">关闭遮罩</button>
+    </view>
+</ui-mask>
+
+<button type="primary" data-show="{{ true }}"  bindtap="handleShowMask2">遮罩导航栏以下的区域</button>
+<ui-mask show="{{showMask2}}" top="{{top2}}">
+    <view class="content">
+        <button type="success" data-show="{{ false }}" bindtap="handleShowMask2">关闭遮罩</button>
+    </view>
+</ui-mask>
+
+<button type="primary" data-show="{{ true }}"  bindtap="handleShowMask3">点击遮罩不关闭</button>
+<ui-mask show="{{showMask3}}" hide-on-tap="{{false}}">
+    <view class="content">
+        <button type="success" data-show="{{ false }}" bindtap="handleShowMask3">关闭遮罩</button>
+    </view>
+</ui-mask>
+
+<button type="primary" data-show="{{ true }}"  bindtap="handleShowMask6">遮罩动画（由小变大）</button>
+<ui-mask show="{{showMask6}}" effect="scale-out" animation>
+    <view class="content">
+        <button type="success" data-show="{{ false }}" bindtap="handleShowMask6">关闭遮罩</button>
+    </view>
+</ui-mask>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    navigationBarTitleText: "首页",
+    backgroundColor: "#F4F4F4",
+    navigationBarTextStyle: "black",
+    showMask1: false,
+    showMask2: false,
+    showMask3: false,
+    showMask6: false,
+  },
+  data: {
+    isShow: false
+  },
+  starShow() {
+    this.setData({
+      isShow: true
+    });
+  },
+  handleShowMask1(e) {
+    let show = e.currentTarget.dataset.show;
+    this.setData({
+      showMask1: show
+    });
+  },
+  handleShowMask2(e) {
+    let show = e.currentTarget.dataset.show;
+    this.setData({
+      showMask2: show
+    });
+  },
+  handleShowMask3(e) {
+    let show = e.currentTarget.dataset.show;
+    this.setData({
+      showMask3: show
+    });
+  },
+  handleShowMask6 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      showMask6: show
+    })
+  }
+};
+</script>
+
+<style lang="less">
+.content {
+  .mix-flex-center();
+}
+.starContent {
+  padding: 50px 50px 0px 50px;
+}
+.buttonContent {
+  padding: 50px;
+}
+</style>

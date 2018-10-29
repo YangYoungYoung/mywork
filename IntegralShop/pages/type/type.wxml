@@ -1,0 +1,42 @@
+<!--pages/type/type.wxml-->
+<view class="goods" wx:if="{{status==0||item.status==status}}">
+  <view class="menu-wrapper">
+    <scroll-view scroll-y="true" style="height: 450px;">
+      <view wx:for="{{goods}}" class="menu-item border-1px" bindtap="selectMenu" data-item-index="{{index}}">
+        <view class="text">
+          {{item.typeName}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="foods-wrapper">
+    <view wx:for="{{goods}}" class="food-list food-list-hook" wx:for-index="parentIndex">
+      <block wx:if="{{item.shopInfo.length>0}}">
+        <view id="order{{parentIndex}}" class="title">{{item.typeName}}</view>
+        <view wx:for="{{item.shopInfo}}" class="food-item" wx:key="item" bindtap='toDetail' data-id="{{item.id}}">
+          <view class="icon">
+            <image src="{{item.shopImage}}" style="width: 200rpx;height: 204rpx" mode='widthFix'></image>
+          </view>
+          <view class="content">
+            <view class="name">{{item.shopName}}</view>
+            <!-- <view class="desc">{{food.description}}</view> -->
+            <!-- <view class="extra">
+            <text class="count">月售{{food.sellCount}}</text>
+            <text class="count">好评{{food.rating}}</text>
+          </view> -->
+            <view class="price">
+              <view class="now">
+                <i-tag class="i-tags" type="border" color="red">
+                  现金券
+                </i-tag>
+                <view class='name_text'>{{item.integral}}元</view>
+              </view>
+              <view class="old" wx:if="{{item.money}}">￥{{item.money}}元</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='end'>------- 到底了 -------</view>
+  </scroll-view>
+</view>

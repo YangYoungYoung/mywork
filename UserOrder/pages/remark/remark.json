@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加备注",
+  "usingComponents": {
+    "i-tag": "../../dist/tag/index"
+  }
+}

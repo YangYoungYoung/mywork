@@ -1,0 +1,80 @@
+/* pages/home/home.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f4f4;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+#types {
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+  background-color: white;
+  padding-top: 10rpx;
+  padding-bottom: 30rpx;
+}
+
+.list-item {
+  padding-top: 20rpx;
+  background-color: white;
+  width: 33%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-foot {
+  font-size: 30rpx;
+  width: 100%;
+  margin-top: 13rpx;
+}
+
+.item-head {
+  width: 100%;
+  height: 110rpx;
+}
+
+.item-head image {
+  width: 110rpx;
+  border-radius: 100%;
+  height: 100%;
+}
+
+.phone {
+  width: 100%;
+  height: 84rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 20rpx;
+  align-items: center;
+  text-align: center;
+}
+
+.phone-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 80rpx;
+}
+
+.phone-text {
+  margin-left: 50rpx;
+  font-size: 30rpx;
+}
+
+.map-img {
+  width: 45rpx;
+  height: 55rpx;
+  margin-left: 80rpx;
+}

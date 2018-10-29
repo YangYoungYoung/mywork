@@ -1,0 +1,17 @@
+<!--pages/rebate/rebate.wxml-->
+<scroll-view scroll-y="true" style="height: 100%">
+  <view class='container'>
+  <view class='title'>当前返利：￥{{sumRebate}}元</view>
+    <view class='coupon-list' wx:for="{{cardConsume}}" wx:key="item">
+      <view class='coupon-view'>
+        <view class='coupon-left'>
+          <view class='coupon-title'>￥{{item.rebate}}</view>
+        </view>
+        <view class='coupon-right'>
+          <view class='coupon-type'>时间：{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class='line'></view>
+    </view>
+  </view>
+</scroll-view>

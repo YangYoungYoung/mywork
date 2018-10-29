@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <view wx:if="{{authorization}}">
+    <button class='btn' style='margin-top: 800rpx;' wx:if="{{state}}" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权</button>
+    <button class='btn' style='margin-top: 800rpx;' wx:else open-type='openSetting' bindopensetting="handler">授权</button>
+  </view>
+  <view wx:else>
+    <button class='btn' style='margin-top: 800rpx;' bindtap='login'>登录</button>
+    <button class='btn' style='margin-top: 30rpx;' bindtap='registered'>注册</button>
+  </view>
+
+</view>

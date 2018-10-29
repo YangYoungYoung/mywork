@@ -1,0 +1,69 @@
+/**index.wxss**/
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #F1F5FB
+}
+.header{
+  width: 100%;
+  height: 81rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 21rpx;
+  padding-left: 42rpx;
+}
+
+.eating{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  margin-left: 15rpx;
+}
+
+.eating .header_image{
+  width: 81rpx;
+  height: 100%;
+}
+
+.eating .header_text{
+  font-size: 32rpx;
+  margin-left: 12rpx;
+}
+
+
+.classfy_list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 42rpx;
+}
+
+.list-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding-bottom: 17rpx;
+}
+
+.item-image {
+  width: 130rpx;
+  height: 130rpx;
+  display: block;
+}
+
+.item-foot {
+  padding-top: 12rpx;
+  font-size: 32rpx;
+}
+
+.mask-class{
+  background-color: #fff1e6;
+}

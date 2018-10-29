@@ -1,0 +1,45 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <block wx:for="{{list}}" wx:key="item.id">
+    <view class='list-item'>
+      <view class='left'>
+        <view class="item-name">{{item.name}}</view>
+        <view wx:if="{{item.state==1}}">
+          <i-tag i-class="i-tags" name="单个标签" color="red">标签1</i-tag>
+        </view>
+        <view wx:else if="{{item.state==2}}">
+          <i-tag i-class="i-tags" name="单个标签" color="green">标签2</i-tag>
+        </view>
+
+
+      </view>
+
+      <view class='right'>
+        <view class='item-price'>￥{{item.price}}</view>
+        <view class='item-price'>{{item.number}}份</view>
+      </view>
+    </view>
+    <view class='line'></view>
+  </block>
+  <view class='remark-title'>订单备注:</view>
+  <i-input i-class="remark-text" value="{{remark}}" type="textarea" mode="wrapped" />
+
+  <view class='footer'>
+    <view class='foot-left'>
+      <view class='left-text'>共 </view>
+      <view class='foot-number'>{{number}}10 </view>
+      <view class='left-text'>份</view>
+    </view>
+
+    <view class='foot-left'>
+      <view class='left-text'>共 </view>
+      <view class='foot-number'>{{number}}1000 </view>
+      <view class='left-text'>元</view>
+    </view>
+    <view class='foot-right'>
+      <button class='btn' bindtap='add' >加 餐</button>
+      <button class='btn' bindtap='payOrder' >结 账</button>
+    </view>
+
+  </view>
+</view>

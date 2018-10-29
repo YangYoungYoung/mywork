@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+<swiper style="height:430rpx;width:100%;background:#eee" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <!--广告banner-->
+  <block wx:for="{{ banner }}" wx:key="item">
+    <swiper-item>
+      <navigator url="/pages/good/index?id={{item.id}}">
+        <image src="{{ item.path }}" class="slide-image" mode='widthFix' />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view id='types'>
+  <block wx:for="{{menu}}" wx:key="item">
+    <view class='list-item' bindtap="navigateToFunction" data-index="{{index}}">
+      <view class='item-head'>
+        <image src="{{item.image}}" mode="scaleToFill"></image>
+      </view>
+      <view class='item-foot'>
+        {{item.name}}
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='phone'>
+  <image class='phone-img' src='../images/phone_icon.png' mode="scaleToFill"></image>
+  <view class='phone-text'>400-0217-123</view>
+  <view class='phone-text'>0312-887055</view>
+</view>
+
+<view class='phone'>
+  <image class='phone-img' src='../images/map_1.png' mode="scaleToFill"></image>
+  <view class='phone-text'>河北省保定市易县靖远北大街62号</view>
+</view>
+
+<view class="weui-footer" style='padding-top:20rpx'>
+  <!-- <view class="weui-footer__links">
+       <navigator url="" class="weui-footer__link">底部链接</navigator> 
+    </view> -->
+  <text class="weui-footer__text" decode="nbsp">Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2018&nbsp;&nbsp;河北玄宇通网络科技有限公司</text>
+</view>

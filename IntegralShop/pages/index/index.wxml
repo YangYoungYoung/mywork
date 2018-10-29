@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper style="height:350rpx;width:100%;background:#eee" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <!--广告banner-->
+    <block wx:for="{{ banner }}" wx:key="item">
+      <swiper-item>
+        <!-- <navigator url="/pages/good/index?id={{item.id}}"> -->
+        <image src="{{ item }}" class="slide-image" mode='aspectFill' />
+        <!-- </navigator> -->
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='type_line'>
+    <image src='../../images/type_line.png'></image>
+  </view>
+
+  <view id='types'>
+    <block wx:for="{{menu}}" wx:key="item">
+      <view class='list-item' bindtap="navigateToFunction" data-id="{{item.id}}">
+        <view class='item-head'>
+          <image src="{{item.picture}}" mode="scaleToFill"></image>
+        </view>
+        <view class='item-foot'>
+          {{item.name}}
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class='line'></view>
+  <view class='recommend_title'>
+    精品推荐
+  </view>
+
+  <view class='shop_grid'>
+    <block wx:for="{{ shopInfo }}" wx:key="item">
+      <view class='item_view' bindtap='toDetail' data-id='{{item.id}}'>
+        <view class='item_head'>
+          <image class='head_image' src='{{item.shopImage}}' mode="scaleToFill"></image>
+        </view>
+        <view class='item_foot'>
+
+          <view class='item_title'>{{item.shopName}}</view>
+          <view class='item_integral'>
+            <i-tag class="i-tags" type="border" color="red">
+              现金券
+            </i-tag>
+            <view class='price_info'>{{item.integral}}</view>
+          </view>
+
+          <view class='item_integral'>
+            <i-tag class="i-tags" type="border" color="red">
+              原价购买
+            </i-tag>
+            <view class='price_info'>{{item.money}}元</view>
+          </view>
+          <view class='item_sold'>库存：{{item.stock}} 已售：{{item.sold}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

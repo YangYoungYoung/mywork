@@ -1,0 +1,74 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <scroll-view class='scroll' scroll-y="true" style="height: 100%;">
+    <image class='detail_image' src="{{orderPath}}"></image>
+
+
+    <view class='detail_margin'>
+      <view class='detail_name'>{{goodName}}</view>
+      <view class='checknumber'>
+        <view class='detail_newprice'>现金券：{{integral}}</view>
+
+        <view class='sold'>已售{{sold}}件</view>
+      </view>
+      <view class='checknumber'>
+        <view class='detail_oldprice'>原价：￥{{goodPrice}}元</view>
+      </view>
+
+    </view>
+    <view class='line-view'></view>
+    <view class='details_content'>
+      <view class='content_title'>商品详情</view>
+      <view class='details_images'>
+        <block wx:for-items="{{list_image}}" wx:key="{{item.id}}">
+          <image class='image_item' wx:if="{{item}}" src="{{item}}" mode="widthFix"></image>
+        </block>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <view id='foot'>
+    <button class='cart' bindtap="showModal">选择本品</button>
+
+  </view>
+
+  <!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='commImg'>
+      <image src='{{orderPath}}' mode="aspectFit"></image>
+    </view>
+    <view class='column'>
+      <text class="sku-price">现金券{{integral}}</text>
+      <!-- <text class="sku-title"><block wx:if="{{gg_txt==''}}">请选择规格</block><block wx:else>已选择{{gg_txt}}ml</block></text> -->
+    </view>
+    <text class="line"></text>
+    <!-- <view class='guige'>
+      <text class="gg-title">规格</text>
+      <view class='gg'>
+        <text wx:for="{{guigeList}}" wx:key="gg" wx:for-item="item" class="{{gg_id==item.guige?'active':''}}" data-id="{{item.guige}}" data-txt="{{item.guige}}" data-price='{{item.price}}' bindtap="filter">{{item.guige}}ml</text>
+      </view>
+    </view>
+    <text class="line"></text> -->
+    <view class="row">
+      <text>数量</text>
+      <view class="quantity-position">
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input type="number" bindinput='bindManual' value="{{num}}" />
+          <!-- 加号 -->
+          <text class="normal" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+    </view>
+    <text class="line"></text>
+    <view class='btn'>
+      <button class="button-add" bindtap="addToCart">加入购物车</button>
+      <button class="button-buy" bindtap="buyNow">立即购买</button>
+    </view>
+  </view>
+</view>

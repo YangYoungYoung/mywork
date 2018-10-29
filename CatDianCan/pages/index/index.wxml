@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header'>
+    <view class='eating'>
+      <image class='header_image' src='../images/eating_img.png'></image>
+      <view class='header_text'style='color:#23ac38'>就餐中</view>
+    </view>
+
+    <view class='eating'>
+      <image class='header_image' src='../images/empty_img.png'></image>
+      <view class='header_text' style='color:#e60012'>空闲</view>
+    </view>
+
+    <view class='eating'>
+      <image class='header_image' src='../images/underway_img.png'></image>
+      <view class='header_text' style='color:#f39800'>开桌</view>
+    </view>
+  </view>
+
+  <view class='classfy_list'>
+    <block wx:for="{{imagelist}}" wx:key="id">
+      <view class='list-item' bindtap="handleOpen1" data-id="{{item.id}}">
+        <image class="item-image" src="{{item.image}}" mode="scaleToFill"></image>
+        <view class='item-foot'>
+          {{item.name}}号桌
+        </view>
+        
+      </view>
+      
+    </block>
+  </view>
+
+  <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+
+</view>

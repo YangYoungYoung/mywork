@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "ui-star": "../../packages/touchui-wx-components/ui-star/dist/index",
+    "ui-mask": "../../packages/touchui-wx-components/ui-mask/dist/index"
+  },
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#F4F4F4",
+  "navigationBarTextStyle": "black",
+  "showMask1": false,
+  "showMask2": false,
+  "showMask3": false,
+  "showMask6": false
+}

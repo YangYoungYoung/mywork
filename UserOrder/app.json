@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/testWeb/ortestWebder",
+    "pages/order/order",
+    "pages/cart/cart",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/canvas/canvas",
+    "pages/remark/remark",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f2f2f2",
+    "navigationBarBackgroundColor": "#016EB4",
+    "navigationBarTitleText": "馋猫点餐",
+    "navigationBarTextStyle": "white"
+  }
+  
+}

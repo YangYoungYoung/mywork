@@ -1,0 +1,48 @@
+<!--pages/logistics/logistics.wxml-->
+<view class="wraper">
+
+  <!-- 物流信息 -->
+
+  <view class="kuaidiInfo">
+
+    <view class="kuaidiIcon">
+
+      <image src="../../images/icon_logistics.png"></image>
+
+    </view>
+
+    <view class="kuaidiDetails">
+      <view>物流状态:
+        <text class="satus">{{state}}</text>
+      </view>
+      <view class="company">承运来源:
+        <text>{{ShipperCode}}</text>
+      </view>
+      <view class="number">运单编号:
+        <text>{{LogisticCode}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 物流跟踪 -->
+  <view class="kuaidi_follow">
+    <view class="follow_title">物流跟踪</view>
+
+    <view class="follow_satus">
+      <block wx:for-items="{{Traces}}">
+
+        <view class="follow_address">
+
+          <view class="label default"></view>
+
+          <view class="address default">{{item.AcceptStation}}</view>
+
+          <view class="date">
+            <text class="time">{{item.AcceptTime}}</text>
+          </view>
+
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;WebViewTest&apos;&#x0D;&#x0A;- Original project: &apos;WebViewTest&apos;&#x0D;&#x0A;- Original element: &apos;webview_load.xml&apos;" description="Delete element" element1="res/layout/webview_load.xml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1533804079758" subPackages="false" version="1.0"/>
+</session>

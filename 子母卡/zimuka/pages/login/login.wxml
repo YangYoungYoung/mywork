@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+
+  <view class='title'>子母卡系统</view>
+
+  <button class='btn' style='margin-top: 530rpx;' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权</button>
+  <button class='btn' style='margin-top: 50rpx;' bindtap='registered'>注册</button>
+
+</view>

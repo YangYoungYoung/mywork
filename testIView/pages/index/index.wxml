@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <i-button i-class='testbtn' bind:click="handleClick">这是一个按钮</i-button>
+
+  <i-grid>
+    <i-grid-item>
+      <i-grid-icon>
+        <image src="../../images/share.png" />
+      </i-grid-icon>
+      <i-grid-label>Grid</i-grid-label>
+    </i-grid-item>
+    <i-grid-item>
+      <i-grid-icon>
+        <image src="../../images/share.png" />
+      </i-grid-icon>
+      <i-grid-label>Grid</i-grid-label>
+    </i-grid-item>
+    <i-grid-item>
+      <i-grid-icon>
+        <image src="../../images/share.png" />
+      </i-grid-icon>
+      <i-grid-label>Grid</i-grid-label>
+    </i-grid-item>
+  </i-grid>
+  <button class='weui-btn mini-btn' size="mini" type="warn">WhoIsYourDad</button>
+  <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+
+  <view class="weui-footer">
+    <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">底部链接</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+  </view>
+</view>
